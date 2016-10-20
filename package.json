@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/SystemEngineeringTeam/set-web-wordpress/issues"
   },
-  "homepage": "https://github.com/SystemEngineeringTeam/set-web-wordpress#readme"
+  "homepage": "https://github.com/SystemEngineeringTeam/set-web-wordpress#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
