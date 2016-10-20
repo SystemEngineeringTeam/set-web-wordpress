@@ -1,0 +1,22 @@
+{
+  "name": "set_web_wp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SystemEngineeringTeam/set-web-wordpress.git"
+  },
+  "keywords": [
+    "WordPress"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SystemEngineeringTeam/set-web-wordpress/issues"
+  },
+  "homepage": "https://github.com/SystemEngineeringTeam/set-web-wordpress#readme"
+}
