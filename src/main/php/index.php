@@ -1,56 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="images/set_icon.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-indigo.min.css" />
-    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <?php get_template_part('common/head'); ?>
     <link rel="stylesheet" href="../css/common.css">
     <title>愛知工業大学 システム工学研究会-Blog-</title>
-    <link rel="stylesheet" href="../css/production.css"> </head>
+    <link rel="stylesheet" href="../css/production.css">
+  </head>
   <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-layout__header--waterfall">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">
-            <a href="../index.html">システム工学研究会</a>
-          </span>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation. We hide it in small screens. -->
-          <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="../about/about.html">About</a>
-            <a class="mdl-navigation__link" href="../blog/">ブログ</a>
-            <a class="mdl-navigation__link" href="../production/production.html">作品</a>
-            <a class="mdl-navigation__link" href="../access/access.html">アクセス</a>
-            <a class="mdl-navigation__link" target="_blank" href="https://github.com/SystemEngineeringTeam">Github</a>
-            <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/set_official">Twitter</a>
-          </nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">システム工学研究会</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="../about/about.html">About</a>
-          <a class="mdl-navigation__link" href="../blog/">ブログ</a>
-          <a class="mdl-navigation__link" href="../production/production.html">作品</a>
-          <a class="mdl-navigation__link" href="../access/access.html">アクセス</a>
-          <a class="mdl-navigation__link" target="_blank" href="https://github.com/SystemEngineeringTeam">Github</a>
-          <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/set_official">Twitter</a>
-        </nav>
-      </div>
+      <?php get_template_part('common/header'); ?>
+      <?php get_template_part('common/drawer'); ?>
       <main class="mdl-layout__content">
+      	<div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-grid">
+              <?php if(have_posts()): while(have_posts()): the_post(); ?>
+              <div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
+               <div class="mdl-card__media">
+                 <?php if ( has_post_thumbnail() ) {?>
+                    <?php the_post_thumbnail(); ?>
+                 <?php } else { ?>
+                 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/○○.png" border="0" alt="" style="padding:20px;">
+                 <?php }?>
+               </div>
+               <div class="mdl-card__title">
+                 <h2 class="mdl-card__title-text"><?php the_title(); ?></h2>
+               </div>
+              </div>
+              <?php endwhile; endif; ?>
+            </div>
+          </div>
+  		  <div class="mdl-cell mdl-cell--4-col">4-</div>
+      	</div>
         <div class="section-container production-section">
           <div class="section-title production-section-title">ブログ</div>
         </div>
-        <footer id="footer" class="mdl-mega-footer">
-          <div class="mdl-mega-footer--middle-section">
-            <p class="mdl-typography--font-light">© 2016 愛知工業大学 システム工学研究会 All Rights Reserved.</p>
-          </div>
-        </footer>
+        <?php get_template_part('common/footer'); ?>
       </main>
     </div>
   </body>
