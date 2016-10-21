@@ -4,7 +4,7 @@
     <?php get_template_part('common/head'); ?>
     <link rel="stylesheet" href="../css/common.css">
     <title>愛知工業大学 システム工学研究会-Blog-</title>
-    <link rel="stylesheet" href="../css/production.css">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory')?>/common.css">
   </head>
   <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -20,11 +20,17 @@
                  <?php if ( has_post_thumbnail() ) {?>
                     <?php the_post_thumbnail(); ?>
                  <?php } else { ?>
-                 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/○○.png" border="0" alt="" style="padding:20px;">
+                 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/no.jpg" class="card-image" border="0" alt="">
                  <?php }?>
                </div>
+               <div class="card-date mdl-card__supporting-text">
+                 <i class="material-icons">access_time</i> 
+                 <span><?php echo get_the_date(); ?></span>
+               </div>
                <div class="mdl-card__title">
-                 <h2 class="mdl-card__title-text"><?php the_title(); ?></h2>
+                 <h2 class="mdl-card__title-text">
+                 <a href="<?php the_permalink(); ?>">
+                 <?php the_title(); ?></a></h2>
                </div>
               </div>
               <?php endwhile; endif; ?>

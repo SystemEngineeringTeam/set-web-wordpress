@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+
+.mdl-layout-title a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mdl-layout__header-row .mdl-navigation__link{
+  opacity: .96 !important;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+}
+
+.card-date{
+	position: relative;
+}
+
+.card-date span{
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	position: absolute;
+  	top: 50%;
+  	margin-left:8px;
+  	margin-top: -1.0rem;
+}
+
+.mdl-card__title a{
+	color: inherit;
+	text-decoration: none;
+}
