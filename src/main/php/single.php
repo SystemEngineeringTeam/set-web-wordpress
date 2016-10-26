@@ -41,11 +41,12 @@
               <?php endwhile; endif; ?>
             </div>
       </div>
-      <div class="mdl-cell mdl-cell--4-col"></div>
-    </div>
-    <div class="section-container production-section">
-      <div class="section-title production-section-title">ブログ</div>
-    </div>
+      <div class="mdl-cell mdl-cell--4-col">
+            <?php get_sidebar();?>
+      </div>
+      <div class="section-container production-section">
+        <div class="section-title production-section-title">ブログ</div>
+      </div>
         <?php get_template_part('common/footer'); ?>
       </main>
   </div>
