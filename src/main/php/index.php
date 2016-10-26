@@ -36,7 +36,9 @@
               <?php endwhile; endif; ?>
             </div>
           </div>
-  		  <div class="mdl-cell mdl-cell--4-col">4-</div>
+  		  <div class="mdl-cell mdl-cell--4-col">
+          <?php get_sidebar(); ?>
+          </div>
       	</div>
         <div class="section-container production-section">
           <div class="section-title production-section-title">ブログ</div>
