@@ -4,7 +4,7 @@
     <?php get_template_part('common/head'); ?>
     <link rel="stylesheet" href="../css/common.css">
     <title>愛知工業大学 システム工学研究会-Blog-</title>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory')?>/common.css">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/css/common.css">
   </head>
   <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
