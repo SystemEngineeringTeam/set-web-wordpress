@@ -18,7 +18,7 @@
               <div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
                <div class="mdl-card__media">
                  <?php if ( has_post_thumbnail() ) {?>
-                    <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail('thumbnail', array('class' => 'card-image')); ?>
                  <?php } else { ?>
                  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/no.jpg" class="card-image" border="0" alt="">
                  <?php }?>
