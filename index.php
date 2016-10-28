@@ -35,6 +35,35 @@
                  <a href="<?php the_permalink(); ?>">
                  <?php the_title(); ?></a></h2>
                </div>
+               <div class="mdl-card__supporting-text mdl-card--border">
+                <?php $categories = get_the_category();
+                if ( $categories ) {
+                ?>
+                  <a href="<?= get_category_link( $categories[0]->term_id )?>">
+                  <span class="mdl-chip mdl-chip--contact">
+                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">C</span>
+                    <span class="mdl-chip__text"><?=$categories[0]->cat_name ?></span>
+                  </span>
+                  </a>
+                <?php }
+                $categories = null;
+                ?> 
+                <?php
+                 $posttags = get_the_tags();
+                   if ( $posttags ) {
+                    foreach ( $posttags as $tag ) {
+                 ?>
+                 <a href="<?php bloginfo('stylesheet_directory')?>/tag/<?= $tag->slug?>">
+                  <span class="mdl-chip">
+                    <span class="mdl-chip__text"><?=$tag->name ?></span>
+                  </span>
+                  </a>
+                 <?php 
+                    }
+                  }
+                  $posttags = null;
+                 ?>
+               </div>
               </div>
               <?php endwhile; endif; ?>
             </div>
