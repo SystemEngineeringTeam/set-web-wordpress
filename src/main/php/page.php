@@ -33,7 +33,7 @@
             </div>
             <div class="mdl-card__supporting-text">
                <?php the_content(); ?>
-               </div>
+            </div>
           </div>
               <?php endwhile; endif; ?>
             </div>
