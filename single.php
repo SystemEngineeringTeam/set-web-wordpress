@@ -2,13 +2,10 @@
 <html>
 <head>
 <?php get_template_part('common/head'); ?>
-<link rel="stylesheet" href="../css/common.css">
 <title>愛知工業大学 システム工学研究会-Blog- <?php the_title(); ?></title>
-<link rel="stylesheet"
-  href="<?php bloginfo('stylesheet_directory')?>/common.css">
 </head>
 <body class="mdl-base">
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
       <?php get_template_part('common/header'); ?>
       <?php get_template_part('common/drawer'); ?>
       <main class="mdl-layout__content">
@@ -44,8 +41,6 @@
       <div class="mdl-cell mdl-cell--4-col">
             <?php get_sidebar();?>
       </div>
-      <div class="section-container production-section">
-        <div class="section-title production-section-title">ブログ</div>
       </div>
         <?php get_template_part('common/footer'); ?>
       </main>
