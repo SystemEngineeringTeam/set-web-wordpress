@@ -5,7 +5,7 @@
     <title>愛知工業大学 システム工学研究会-Blog-</title>
   </head>
   <body class="mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
       <?php get_template_part('common/header'); ?>
       <?php get_template_part('common/drawer'); ?>
       <main class="mdl-layout__content">
