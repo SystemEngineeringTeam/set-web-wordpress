@@ -47,6 +47,7 @@
       <div class="section-container production-section">
         <div class="section-title production-section-title">ブログ</div>
       </div>
+      </div>
         <?php get_template_part('common/footer'); ?>
       </main>
   </div>
