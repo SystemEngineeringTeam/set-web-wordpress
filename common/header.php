@@ -1,7 +1,7 @@
 <header class="mdl-layout__header mdl-layout__header--waterfall">
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title"> <a href="../index.html">システム工学研究会</a>
+    <span class="mdl-layout-title"> <a href="<?php echo home_url() ?>/../index.html">システム工学研究会</a>
     </span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
