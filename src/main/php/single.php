@@ -25,7 +25,7 @@
                  <?php }?>
                </div>
             <div class="card-date mdl-card__supporting-text">
-              <i class="material-icons">access_time</i> <span><?php echo get_the_date();?> </span><span>: <?php the_author(); ?></span>
+              <i class="material-icons">access_time</i><span> <span><?php echo get_the_date();?> </span><span>, 著者 <?php the_author(); ?></span></span>
             </div>
             
             <div class="mdl-card__title">
