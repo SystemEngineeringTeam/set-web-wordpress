@@ -17,7 +17,7 @@
             class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
             <div class="mdl-card__media">
                  <?php if ( has_post_thumbnail() ) {?>
-                    <?php the_post_thumbnail('thumbnail', array('class' => 'card-image')); ?>
+                    <?php the_post_thumbnail('large', array('class' => 'card-image')); ?>
                  <?php } else { ?>
                  <img
                 src="<?php bloginfo('stylesheet_directory'); ?>/images/no.jpg"
@@ -25,8 +25,9 @@
                  <?php }?>
                </div>
             <div class="card-date mdl-card__supporting-text">
-              <i class="material-icons">access_time</i> <span><?php echo get_the_date(); ?></span>
+              <i class="material-icons">access_time</i> <span><?php echo get_the_date();?> </span><span>: <?php the_author(); ?></span>
             </div>
+            
             <div class="mdl-card__title">
               <h2 class="mdl-card__title-text">
                  <?php the_title(); ?></h2>
