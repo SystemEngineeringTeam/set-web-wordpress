@@ -13,7 +13,7 @@
       <div class="mdl-cell mdl-cell--8-col">
         <div class="mdl-grid">
               <?php if(have_posts()): while(have_posts()): the_post(); ?>
-              <div
+              <article
             class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
             <div class="mdl-card__media">
                  <?php if ( has_post_thumbnail() ) {?>
@@ -25,7 +25,10 @@
                  <?php }?>
                </div>
             <div class="card-date mdl-card__supporting-text">
-              <i class="material-icons">access_time</i> <span><?php echo get_the_date(); ?></span>
+              <i class="material-icons">access_time</i>
+              <span>
+              <time datetime="<?php the_time('c'); ?>"><?php echo get_the_date(); ?></time>
+              </span>
             </div>
             <div class="mdl-card__title">
               <h2 class="mdl-card__title-text">
@@ -34,7 +37,7 @@
             <div class="mdl-card__supporting-text">
                <?php the_content(); ?>
             </div>
-          </div>
+          </article>
               <?php endwhile; endif; ?>
             </div>
       </div>

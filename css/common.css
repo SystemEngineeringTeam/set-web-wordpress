@@ -14,11 +14,29 @@
     height: 180px;
 }
 
+
+
+@media screen and (orientation: landscape) {
+   /* 横向きの場合のスタイル */
+   .card-image-single {
+    width: 100%;
+    height: 380px;
+   }
+}
+@media screen and (orientation: portrait) {
+   /* 縦向きの場合のスタイル */
+   .card-image-single {
+    width: 100%;
+    height: 160px;
+}
+}
+
+
 .card-date{
 	position: relative;
 }
 
-.card-date span{
+.card-date > span{
 	height: 24px;
 	line-height: 24px;
 	display: inline-block;

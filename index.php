@@ -16,7 +16,7 @@
             </div>
             <div class="mdl-grid">
               <?php if(have_posts()): while(have_posts()): the_post(); ?>
-              <div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
+              <article class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
                <div class="mdl-card__media">
                  <a href="<?php the_permalink(); ?>">
                  <?php if ( has_post_thumbnail() ) {?>
@@ -28,7 +28,11 @@
                </div>
                <div class="card-date mdl-card__supporting-text">
                  <i class="material-icons">access_time</i> 
-                 <span><?php echo get_the_date(); ?></span>
+                 <span>
+                   <time datetime="<?php the_time('c'); ?>"><?php echo get_the_date(); ?></time>
+                   <span >, 著者 <?php the_author(); ?></span>
+                 </span>
+                 
                </div>
                <div class="mdl-card__title">
                  <h2 class="mdl-card__title-text">
@@ -63,8 +67,9 @@
                   }
                   $posttags = null;
                  ?>
+                 
                </div>
-              </div>
+              </article>
               <?php endwhile; endif; ?>
             </div>
           </div>
