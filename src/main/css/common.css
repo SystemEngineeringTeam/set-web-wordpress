@@ -18,7 +18,7 @@
 	position: relative;
 }
 
-.card-date span{
+.card-date > span{
 	height: 24px;
 	line-height: 24px;
 	display: inline-block;
