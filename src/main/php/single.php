@@ -13,19 +13,23 @@
       <div class="mdl-cell mdl-cell--8-col">
         <div class="mdl-grid">
               <?php if(have_posts()): while(have_posts()): the_post(); ?>
-              <div
-            class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-            <div class="mdl-card__media">
+              <article
+                class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                  <div class="mdl-card__media">
                  <?php if ( has_post_thumbnail() ) {?>
-                    <?php the_post_thumbnail('large', array('class' => 'card-image')); ?>
+                    <?php the_post_thumbnail('large', array('class' => 'card-image-single')); ?>
                  <?php } else { ?>
                  <img
                 src="<?php bloginfo('stylesheet_directory'); ?>/images/no.jpg"
-                class="card-image" border="0" alt="">
+                class="card-image-single" border="0" alt="">
                  <?php }?>
                </div>
             <div class="card-date mdl-card__supporting-text">
-              <i class="material-icons">access_time</i><span> <span><?php echo get_the_date();?> </span><span>, 著者 <?php the_author(); ?></span></span>
+              <i class="material-icons">access_time</i>
+              <span> 
+                <time datetime="<?php the_time('c'); ?>"><?php echo get_the_date();?> </time>
+                <span>, 著者 <?php the_author(); ?></span>
+              </span>
             </div>
             
             <div class="mdl-card__title">
@@ -35,7 +39,7 @@
             <div class="mdl-card__supporting-text">
                <?php the_content(); ?>
                </div>
-          </div>
+          </article>
               <?php endwhile; endif; ?>
             </div>
       </div>
