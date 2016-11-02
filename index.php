@@ -20,7 +20,7 @@
                <div class="mdl-card__media">
                  <a href="<?php the_permalink(); ?>">
                  <?php if ( has_post_thumbnail() ) {?>
-                    <?php the_post_thumbnail('thumbnail', array('class' => 'card-image')); ?>
+                    <?php the_post_thumbnail('large', array('class' => 'card-image')); ?>
                  <?php } else { ?>
                  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/no.jpg" class="card-image" border="0" alt="">
                  <?php }?>
