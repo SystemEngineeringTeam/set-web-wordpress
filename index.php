@@ -2,7 +2,7 @@
 <html>
   <head>
     <?php get_template_part('common/head'); ?>
-    <title>愛知工業大学 システム工学研究会-Blog-</title>
+    <title>Blog - 愛知工業大学 システム工学研究会</title>
   </head>
   <body class="mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
