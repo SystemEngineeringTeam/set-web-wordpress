@@ -32,7 +32,7 @@ add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
 
 // カスタム投稿タイプの追加
-add_action('init', 'create_post_type');
+//add_action('init', 'create_post_type');
 function create_post_type() {
  
  $exampleSupports = [  // supports のパラメータを設定する配列（初期値だと title と editor のみ投稿画面で使える）
@@ -61,6 +61,7 @@ function create_post_type() {
 
 //カスタム投稿タイプのデフォルトカテゴリを固定
 //$housecatを場合によっては変更してください
+//add_action('publish_event', 'add_set_housecategory_automatically');
 function add_set_housecategory_automatically($post_ID) {
  global $wpdb;
  if(!wp_is_post_revision($post_ID)) {
@@ -68,9 +69,10 @@ function add_set_housecategory_automatically($post_ID) {
   wp_set_object_terms( $post_ID, $housecat, 'category');
  }
 }
-add_action('publish_event', 'add_set_housecategory_automatically');
+
 
 // 'post', -'page' および 'event' 投稿タイプの投稿をホームページに表示する
+//add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 function add_my_post_types_to_query( $query ) {
  
   if ( is_home() && $query->is_main_query() ){
@@ -82,7 +84,7 @@ function add_my_post_types_to_query( $query ) {
   }
   return $query;
 }
-add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
 
 
 //URL
@@ -102,6 +104,9 @@ function myposttype_permalink($post_link, $id = 0, $leavename) {
 
 
 //カスタムフィールド(イベント用)
+
+define('SET_ADD_FIELD_TYPE', 'post');//どの投稿にカスタムフィールドを追加するか
+
 add_action('admin_menu', 'add_set_custom_field');
 add_action('save_post', 'save_set_event_date');
 add_action('save_post', 'save_set_event_location');
@@ -109,8 +114,8 @@ add_action('save_post', 'save_set_event_location');
 
 function add_set_custom_field(){
  if(function_exists('add_set_custom_field')){
-  add_meta_box('event_date', '開催日', 'insert_event_date', 'event', 'normal', 'high');
-  add_meta_box('event_location', '開催場所', 'insert_event_location', 'event', 'normal', 'high');
+  add_meta_box('event_date', '[イベント予告] 開催日', 'insert_event_date', SET_ADD_FIELD_TYPE, 'normal', 'high');
+  add_meta_box('event_location', '[イベント予告] 開催場所', 'insert_event_location', SET_ADD_FIELD_TYPE, 'normal', 'high');
  }
 }
 
