@@ -122,7 +122,7 @@ function add_set_custom_field(){
 function insert_event_date(){
  global $post;
  wp_nonce_field(wp_create_nonce(__FILE__), 'my_nonce');
- echo '<label class="hidden" for="event_date">開催日</label><input type="date" name="event_date" size="20" value="'.esc_html(get_post_meta($post->ID, 'event_date', true)).'" />';
+ echo '<label class="hidden" for="event_date">開催日</label><input type="datetime-local" name="event_date" size="20" value="'.esc_html(get_post_meta($post->ID, 'event_date', true)).'" />';
  echo '<p>イベントの開催日を入力します。</p>';
 }
 
