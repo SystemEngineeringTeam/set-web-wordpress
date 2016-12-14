@@ -64,3 +64,17 @@
     font-size: 34px;
     opacity: 0.54;
 }
+
+/* パディングを消す */
+
+@media (max-width: 479px){
+	.mdl-grid .mdl-grid{
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	.mdl-cell .mdl-cell{
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+		width: calc(100% - 0px) !important;
+	}
+}
